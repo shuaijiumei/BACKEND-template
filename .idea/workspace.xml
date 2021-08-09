@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="" />
+    <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../中间件/错误处理中间件/错误处理中间件.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/pages/Login/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/pages/Main/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/router/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/game.fire" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/game.fire" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../中间件/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../中间件/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/assets/styles/_globalVariable.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../yarn.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1wTCY9Gzf5ufpHJKeFuUIRQeZvH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -33,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628473236467</updated>
       <workItem from="1628473237968" duration="62000" />
+      <workItem from="1628473358355" duration="363000" />
     </task>
     <servers />
   </component>
@@ -49,5 +76,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
