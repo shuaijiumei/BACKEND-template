@@ -24,5 +24,6 @@ module.exports = {
     'no-restricted-syntax': 1,
     'no-await-in-loop': 0,
     'no-underscore-dangle': 0,
+    'implicit-arrow-linebreak': 0,
   },
 }

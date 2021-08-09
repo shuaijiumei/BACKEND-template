@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/APIs.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../中间件/错误处理中间件/错误处理中间件.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/pages/Login/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/pages/Main/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/router/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/game.fire" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/game.fire" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APIs.md" beforeDir="false" afterPath="$PROJECT_DIR$/APIs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../中间件/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../中间件/1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/assets/styles/_globalVariable.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../vue.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/validate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +31,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bzc/yzyback-v2" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="D:\UESTC-DISCUSS-BACKEND\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -70,7 +59,8 @@
       <workItem from="1628473237968" duration="62000" />
       <workItem from="1628473358355" duration="939000" />
       <workItem from="1628480357872" duration="321000" />
-      <workItem from="1628480724001" duration="2725000" />
+      <workItem from="1628480724001" duration="3656000" />
+      <workItem from="1628489455401" duration="5541000" />
     </task>
     <servers />
   </component>
@@ -88,5 +78,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

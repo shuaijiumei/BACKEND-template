@@ -80,3 +80,29 @@ token Bearer 类型
 
 还没做 根据信息传入更新用户信息
 ```
+```json
+"PUT /user"
+// 入参
+{
+  "user": {
+    "bio": "i am hwy",  // 个人简介
+    "image": null,    // image URL CDN
+    "username": "hwy",  // 用户昵称
+    "password": "1234"  // 用户密码
+  }
+}
+
+// 返参
+{
+  "user": {
+    "bio": "i am hwy",
+    "image": null,
+    "_id": "6110c13cc4f0bb59bcc276f0",
+    "username": "hwy",
+    "email": "hwy@qq.com",
+    "createAt": "2021-08-09T05:46:36.092Z",
+    "updateAt": "2021-08-09T05:46:36.092Z",
+    "__v": 0
+  }
+}
+```

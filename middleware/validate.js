@@ -19,9 +19,9 @@ exports = module.exports = (validations) => async (req, res, next) => {
   res.status(400).json({ errors: errors.array() })
 }
 
-// eslint-disable-next-line max-len
-exports.isValidObjectId = (location, fields) => buildCheckFunction(location)(fields).custom(async (value) => {
-  if (!isValidObjectId(value)) {
-    return Promise.reject('ID 无效！！！')
-  }
-})
+exports.isValidObjectId = (location, fields) =>
+  buildCheckFunction(location)(fields).custom(async (value) => {
+    if (!isValidObjectId(value)) {
+      return Promise.reject('ID 无效！！！')
+    }
+  })

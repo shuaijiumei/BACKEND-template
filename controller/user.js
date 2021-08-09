@@ -71,7 +71,19 @@ exports.getCurrentUser = async (req, res, next) => {
 // 更新用户
 exports.updateUser = async (req, res, next) => {
   try {
-    res.send('put /users')
+    const { user: bodyUser } = req.body
+    const { user } = req
+    user.bio = bodyUser.bio || user.bio
+    user.image = bodyUser.image || user.image
+    user.username = bodyUser.username || user.username
+
+    if (bodyUser.email) {
+      return res.status(403).end()
+    }
+    await user.save()
+    res.status(201).json({
+      user,
+    })
   } catch (err) {
     next(err)
   }

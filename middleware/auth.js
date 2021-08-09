@@ -18,6 +18,10 @@ module.exports = async (req, res, next) => {
     return res.status(401).end()
   }
 
+  // 验证是否有效
+  // 无效 -> 响应 401
+  // 有效 -> 用户信息挂载到 req 请求对象上
+
   try {
     const decodedToken = await verify(token, jwtSecret)
     req.user = await User.findById(decodedToken.userId)
@@ -25,8 +29,4 @@ module.exports = async (req, res, next) => {
   } catch (e) {
     return res.status(401).end()
   }
-
-  // 验证是否有效
-  // 无效 -> 响应 401
-  // 有效 -> 用户信息挂载到 req 请求对象上
 }
