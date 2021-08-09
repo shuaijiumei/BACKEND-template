@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/APIs.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../中间件/错误处理中间件/错误处理中间件.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../realWorld/realworld/src/App.jsx" afterDir="false" />
@@ -18,7 +19,8 @@
       <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocos/assets/script/panda.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../中间件/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../中间件/1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../package.json" beforeDir="false" />
@@ -36,7 +38,9 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1wTCY9Gzf5ufpHJKeFuUIRQeZvH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,6 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -63,7 +68,9 @@
       <option name="presentableId" value="Default" />
       <updated>1628473236467</updated>
       <workItem from="1628473237968" duration="62000" />
-      <workItem from="1628473358355" duration="612000" />
+      <workItem from="1628473358355" duration="939000" />
+      <workItem from="1628480357872" duration="321000" />
+      <workItem from="1628480724001" duration="2725000" />
     </task>
     <servers />
   </component>

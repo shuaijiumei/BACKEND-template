@@ -43,11 +43,12 @@ exports.register = async (req, res, next) => {
     // 2.2 业务数据验证（不重复）
     // 3. 验证通过则将数据保存到数据库
     let user = new User(req.body.user)
+    // 保存到数据库
+    await user.save()
+
     // 转换成普通的JSON对象，删除返回的password
     user = user.toJSON()
     delete user.password
-    // 保存到数据库
-    await user.save()
     // 4. 发送成功响应
     res.status(201).json({
       user,
