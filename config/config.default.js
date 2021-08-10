@@ -6,6 +6,6 @@
  */
 
 module.exports = {
-  dbUrl: 'mongodb://localhost:27017/realWorld',
+  dbUrl: 'mongodb://121.199.27.201:27017/UESTC-DISCUSS',
   jwtSecret: 'be8eaa68-8b80-4fce-ae79-cbcaf225743e',
 }
