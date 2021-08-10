@@ -9,11 +9,27 @@ const { body } = require('express-validator')
 const validate = require('../middleware/validate')
 const { Article } = require('../model')
 
-exports.createArticles = validate([
-  body('article.title').notEmpty().withMessage('文章标题不能为空'),
-  body('article.description').notEmpty().withMessage('文章摘要不能为空'),
-  body('article.body').notEmpty().withMessage('文章内容不能为空'),
-])
+exports.createArticles = [
+  validate([
+    body('article.title').notEmpty().withMessage('文章标题不能为空'),
+    body('article.description').notEmpty().withMessage('文章摘要不能为空'),
+    body('article.body').notEmpty().withMessage('文章内容不能为空'),
+  ]),
+  // 需要验证该用户是否已经有过相同标题的文章
+  async (req, res, next) => {
+    try {
+      const { title } = req.body.article
+      const id = req.user._id
+      const articles = await Article.find({ author: id })
+      if (articles.some((item) => item.title.toString() === title.toString())) {
+        return res.status(401).json({ error: '已经存在同名文章，请修改' })
+      }
+      next()
+    } catch (e) {
+      next(e)
+    }
+  },
+]
 
 exports.getOneArticle = validate([
   validate.isValidObjectId(['params'], 'articleId'),
@@ -24,7 +40,6 @@ exports.updateArticle = [
   validate([
     // 自定义验证方法
     validate.isValidObjectId(['params'], 'articleId'),
-
   ]),
   // 校验文章是否存在
   async (req, res, next) => {

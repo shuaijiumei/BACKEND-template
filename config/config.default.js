@@ -7,5 +7,6 @@
 
 module.exports = {
   dbUrl: 'mongodb://121.199.27.201:27017/UESTC-DISCUSS',
+  dbLocalUrl: 'mongodb://localhost:27017/UESTC-DISCUSS-dev',
   jwtSecret: 'be8eaa68-8b80-4fce-ae79-cbcaf225743e',
 }

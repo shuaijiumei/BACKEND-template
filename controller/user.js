@@ -5,7 +5,7 @@
  * example 例子
  */
 
-const { User } = require('../model')
+const { User, Tag } = require('../model')
 const { jwtSecret } = require('../config/config.default')
 const jwt = require('../util/jwt')
 
@@ -60,8 +60,14 @@ exports.register = async (req, res, next) => {
 // 获取当前登录用户
 exports.getCurrentUser = async (req, res, next) => {
   try {
+    // 根据用户id获取用户创建的标签
+    const id = req.user._id
+    const tagList = await Tag.find({ author: id })
     res.status(200).json({
-      user: req.user,
+      user: {
+        userInfo: req.user,
+        tagList,
+      },
     })
   } catch (err) {
     next(err)
@@ -76,6 +82,7 @@ exports.updateUser = async (req, res, next) => {
     user.bio = bodyUser.bio || user.bio
     user.image = bodyUser.image || user.image
     user.username = bodyUser.username || user.username
+    user.tagList = bodyUser.tagList || user.tagList
 
     if (bodyUser.email) {
       return res.status(403).end()

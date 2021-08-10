@@ -10,7 +10,6 @@ const baseModel = require('./baseModel')
 const { Schema } = mongoose
 
 const articleSchema = new mongoose.Schema({
-  ...baseModel,
   title: {
     type: String,
     required: true,
@@ -24,7 +23,8 @@ const articleSchema = new mongoose.Schema({
     required: true,
   },
   tagList: {
-    type: [String],
+    type: [Schema.Types.ObjectId],
+    ref: 'Tag',
     default: null,
   },
   favoritesCount: {
@@ -36,6 +36,7 @@ const articleSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  ...baseModel,
 })
 
 module.exports = articleSchema

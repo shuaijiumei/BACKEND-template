@@ -14,19 +14,19 @@ const router = express.Router()
 
 // 文章相关路由
 
-// 获取文章
+// 获取文章 done
 router.get('/', articlesControl.getArticles)
 
 // 赞赏文章
 router.get('/feed', articlesControl.feedArticles)
 
-// 获取指定文章
+// 获取指定文章 done
 router.get('/:articleId', articleValidator.getOneArticle, articlesControl.getOneArticles)
 
-// 新建文章
+// 新建文章 done
 router.post('/', auth, articleValidator.createArticles, articlesControl.addArticles)
 
-// 更新文章
+// 更新文章 done
 router.put('/:articleId', auth, articleValidator.updateArticle, articlesControl.updateArticles)
 
 // 删除文章

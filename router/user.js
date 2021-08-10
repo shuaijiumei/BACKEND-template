@@ -15,16 +15,16 @@ const router = express.Router()
 
 // 用户相关路由
 
-// 用户登录
+// 用户登录 done
 router.post('/users/login', userValidator.login, userControl.login)
 
-// 用户注册
+// 用户注册 done
 router.post('/users', userValidator.register, userControl.register) // 验证通过执行具体的控制器处理
 
-// 获取当前登录用户
+// 获取当前登录用户 done
 router.get('/user', auth, userControl.getCurrentUser)
 
-// 更新用户
+// 更新用户 done
 router.put('/user', auth, userControl.updateUser)
 
 module.exports = router

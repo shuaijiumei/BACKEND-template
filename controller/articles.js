@@ -4,7 +4,7 @@
  * tips 特别注意
  * example 例子
  */
-const { Article, User } = require('../model')
+const { Article, User, Tag } = require('../model')
 // 获取文章 + 筛选文章 根据tag、作者、数量
 exports.getArticles = async (req, res, next) => {
   try {
@@ -72,6 +72,18 @@ exports.addArticles = async (req, res, next) => {
     article.author = req.user._id
     // 根据id 映射到 User表 实现级联查询
     await article.populate('author').execPopulate()
+    // 给文章打标签 支持多个标签
+    if (req.body.article.tagName.length) {
+      const { tagName } = req.body.article
+      article.tagList = []
+      // eslint-disable-next-line no-restricted-syntax
+      for (const item of tagName) {
+        const tag = await Tag.findOne({ tagName: item })
+        article.tagList.push(tag)
+      }
+      await article.populate('tagList').execPopulate()
+    }
+
     await article.save()
     res.status(201).json({
       article,
@@ -88,6 +100,7 @@ exports.updateArticles = async (req, res, next) => {
     article.title = bodyArticle.title || article.title
     article.description = bodyArticle.description || article.description
     article.body = bodyArticle.body || article.body
+    article.tagList = bodyArticle.tagList || article.tagList
     await article.save()
     res.status(201).json({
       article,

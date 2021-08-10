@@ -16,6 +16,6 @@ router.use('/profiles', require('./profile'))
 // 文章相关路由
 router.use('/articles', require('./article'))
 // tag相关路由
-router.use(require('./tag'))
+router.use('/tags', require('./tag'))
 
 module.exports = router

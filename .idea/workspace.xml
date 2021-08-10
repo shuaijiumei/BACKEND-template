@@ -2,13 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validator/tag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APIs.md" beforeDir="false" afterPath="$PROJECT_DIR$/APIs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.default.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.default.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/validator/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +57,7 @@
     <property name="node.js.selected.package.eslint" value="D:\UESTC-DISCUSS-BACKEND\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -58,7 +79,9 @@
       <workItem from="1628480724001" duration="3656000" />
       <workItem from="1628489455401" duration="7609000" />
       <workItem from="1628559249287" duration="8000" />
-      <workItem from="1628580829941" duration="1090000" />
+      <workItem from="1628580829941" duration="1982000" />
+      <workItem from="1628582854308" duration="6881000" />
+      <workItem from="1628589792274" duration="2312000" />
     </task>
     <servers />
   </component>

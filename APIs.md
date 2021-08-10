@@ -63,14 +63,26 @@ token Bearer 类型
 // 返回参数
 {
   "user": {
-    "bio": "i am hwy",
-    "image": null,
-    "_id": "6110c13cc4f0bb59bcc276f0",
-    "username": "hwy",
-    "email": "hwy@qq.com",
-    "createAt": "2021-08-09T05:46:36.092Z",
-    "updateAt": "2021-08-09T05:46:36.092Z",
-    "__v": 0
+    "userInfo": {
+      "bio": null,
+      "image": null,
+      "_id": "611230b2d4f01b60584678da",
+      "username": "tby",
+      "email": "740514874@qq.com",
+      "createAt": "2021-08-10T07:54:26.413Z",
+      "updateAt": "2021-08-10T07:54:26.413Z",
+      "__v": 0
+    },
+    "tagList": [
+      {
+        "_id": "61124208f34c7a5f542d93cb",
+        "tagName": "reactjs",
+        "createAt": "2021-08-10T09:08:24.949Z",
+        "updateAt": "2021-08-10T09:08:24.949Z",
+        "author": "611230b2d4f01b60584678da",
+        "__v": 0
+      }
+    ]
   }
 }
 ```
@@ -102,6 +114,62 @@ token Bearer 类型
     "email": "hwy@qq.com",
     "createAt": "2021-08-09T05:46:36.092Z",
     "updateAt": "2021-08-09T05:46:36.092Z",
+    "__v": 0
+  }
+}
+```
+
+## 文章相关
+```json
+获取文章  筛选文章 根据tag 作者 数量
+"get /articles/"
+// 入参
+{
+  
+}
+```
+```json
+新建文章
+"POST /articles/"
+// 入参
+{
+  "article": {
+    "title": "tby",
+    "description": "test article", // 简短描述
+    "body": "article body",
+    "tagName": ["reactjs"] // 数组
+  }
+}
+// 返回
+{
+  "article": {
+    "tagList": [
+      {
+        "_id": "61124208f34c7a5f542d93cb",
+        "tagName": "reactjs",
+        "createAt": "2021-08-10T09:08:24.949Z",
+        "updateAt": "2021-08-10T09:08:24.949Z",
+        "author": "611230b2d4f01b60584678da",
+        "__v": 0
+      }
+    ],
+    "favoritesCount": 0,
+    "_id": "61124b4f5bc79859f487a19a",
+    "title": "tby",
+    "description": "test article",
+    "body": "article body",
+    "createAt": "2021-08-10T09:47:59.500Z",
+    "updateAt": "2021-08-10T09:47:59.500Z",
+    "author": {
+      "bio": null,
+      "image": null,
+      "_id": "611230b2d4f01b60584678da",
+      "username": "tby",
+      "email": "740514874@qq.com",
+      "createAt": "2021-08-10T07:54:26.413Z",
+      "updateAt": "2021-08-10T07:54:26.413Z",
+      "__v": 0
+    },
     "__v": 0
   }
 }
