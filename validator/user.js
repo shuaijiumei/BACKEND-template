@@ -45,7 +45,7 @@ exports.login = [
   ]),
   // 判断是否存在用户
   validate([
-    body('user.email').custom(async (email, { req }) => {
+    body('user.email').custom(async (email, { req, res, next }) => {
       // 需要拿到的数据
       const user = await User.findOne({ email }).select(['password', 'username', 'bio', 'image', 'email'])
       if (!user) {
