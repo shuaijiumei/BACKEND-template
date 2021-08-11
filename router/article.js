@@ -17,9 +17,6 @@ const router = express.Router()
 // 获取文章 done
 router.get('/', articlesControl.getArticles)
 
-// 赞赏文章
-router.get('/feed', articlesControl.feedArticles)
-
 // 获取指定文章 done
 router.get('/:articleId', articleValidator.getOneArticle, articlesControl.getOneArticles)
 
@@ -29,7 +26,7 @@ router.post('/', auth, articleValidator.createArticles, articlesControl.addArtic
 // 更新文章 done
 router.put('/:articleId', auth, articleValidator.updateArticle, articlesControl.updateArticles)
 
-// 删除文章
+// 删除文章 done
 router.delete('/:articleId', auth, articleValidator.deleteArticle, articlesControl.deleteArticles)
 
 // 添加评论
@@ -38,11 +35,7 @@ router.post('/:articleId/comments', articlesControl.addComments)
 router.get('/:articleId/comments', articlesControl.getComments)
 // 删除评论
 router.delete('/:articleId/comments/:id', articlesControl.deleteComments)
-
-// 收藏文章
-router.post('/:articleId/favorite', articlesControl.favoriteArticles)
-
-// 取消收藏
-router.delete('/:articleId/favorite', articlesControl.cancelFavoriteArticles)
+// 点赞文章 done
+router.post('/:articleId/favorite', articleValidator.favoriteArticle, articlesControl.favoriteArticles)
 
 module.exports = router

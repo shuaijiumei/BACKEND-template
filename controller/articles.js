@@ -146,7 +146,14 @@ exports.deleteComments = async (req, res, next) => {
 
 exports.favoriteArticles = async (req, res, next) => {
   try {
-    res.send(`post /articles/:${req.params.slug}/favorite`)
+    const { article } = req
+    // 点赞数 + 1 前端做防抖
+    article.favoritesCount += 1
+
+    await article.save()
+    res.status(201).json({
+      article,
+    })
   } catch (e) {
     next(e)
   }

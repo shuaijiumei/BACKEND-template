@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4ee25199-4d71-4717-bd4e-9f799d2526c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/validator/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -66,7 +74,7 @@
       <workItem from="1628559249287" duration="8000" />
       <workItem from="1628580829941" duration="1982000" />
       <workItem from="1628582854308" duration="6881000" />
-      <workItem from="1628589792274" duration="5090000" />
+      <workItem from="1628589792274" duration="6178000" />
     </task>
     <servers />
   </component>

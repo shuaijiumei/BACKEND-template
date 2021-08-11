@@ -8,7 +8,7 @@
 const { body } = require('express-validator')
 const validate = require('../middleware/validate')
 const { Article } = require('../model')
-
+// 新建文章
 exports.createArticles = [
   validate([
     body('article.title').notEmpty().withMessage('文章标题不能为空'),
@@ -30,11 +30,11 @@ exports.createArticles = [
     }
   },
 ]
-
+// 获取指定文章
 exports.getOneArticle = validate([
   validate.isValidObjectId(['params'], 'articleId'),
 ])
-
+// 更新文章
 exports.updateArticle = [
   // id 是否有效
   validate([
@@ -60,5 +60,22 @@ exports.updateArticle = [
     next()
   },
 ]
-
+// 点赞文章
+exports.favoriteArticle = [
+  // id 是否有效
+  validate([
+    // 自定义验证方法
+    validate.isValidObjectId(['params'], 'articleId'),
+  ]),
+  // 校验文章是否存在
+  async (req, res, next) => {
+    const { articleId } = req.params
+    const article = await Article.findById(articleId)
+    if (!article) {
+      return res.status(404).end()
+    }
+    req.article = article
+    next()
+  },
+]
 exports.deleteArticle = exports.updateArticle
