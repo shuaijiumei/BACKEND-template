@@ -4,7 +4,9 @@
  * tips 特别注意
  * example 例子
  */
-const { Article, User, Tag } = require('../model')
+const {
+  Article, User, Tag, Comment,
+} = require('../model')
 // 获取文章 + 筛选文章 根据tag、作者、数量
 exports.getArticles = async (req, res, next) => {
   try {
@@ -37,7 +39,6 @@ exports.getArticles = async (req, res, next) => {
       articles,
       articlesCount,
     })
-    res.send('get /articles')
   } catch (e) {
     next(e)
   }
@@ -119,18 +120,31 @@ exports.deleteArticles = async (req, res, next) => {
     next(e)
   }
 }
-
+// 添加评论
 exports.addComments = async (req, res, next) => {
   try {
-    res.send(`post /articles/:${req.params.slug}/comments`)
+    const comment = new Comment(req.body.comment)
+    comment.author = req.user._id
+    await comment.populate('author').execPopulate()
+    comment.article = req.article._id
+    await comment.populate('article').execPopulate()
+
+    await comment.save()
+    res.status(201).json({
+      comment,
+    })
   } catch (e) {
     next(e)
   }
 }
-
+// 获得评论
 exports.getComments = async (req, res, next) => {
   try {
-    res.send(`get /articles/:${req.params.slug}/comments`)
+    const id = req.article._id
+    const comments = await Comment.find({ article: id })
+    res.status(200).json({
+      comments,
+    })
   } catch (e) {
     next(e)
   }
@@ -138,12 +152,14 @@ exports.getComments = async (req, res, next) => {
 
 exports.deleteComments = async (req, res, next) => {
   try {
-    res.send(`delete /articles/:${req.params.slug}/comments/:${req.params.id}`)
+    const { comment } = req
+    await comment.remove()
+    res.status(204).end()
   } catch (e) {
     next(e)
   }
 }
-
+// 点赞文章
 exports.favoriteArticles = async (req, res, next) => {
   try {
     const { article } = req
@@ -154,14 +170,6 @@ exports.favoriteArticles = async (req, res, next) => {
     res.status(201).json({
       article,
     })
-  } catch (e) {
-    next(e)
-  }
-}
-
-exports.cancelFavoriteArticles = async (req, res, next) => {
-  try {
-    res.send(`delete /articles/:${req.params.slug}/favorite`)
   } catch (e) {
     next(e)
   }

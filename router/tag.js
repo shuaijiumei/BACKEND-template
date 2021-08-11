@@ -14,8 +14,8 @@ const router = express.Router()
 // router.get('/tags', auth, tagControl.getTags)
 // 新建标签 done
 router.post('/', auth, tagValidator.createTag, tagControl.createTag)
-// 更新标签
+// 更新标签 done
 router.put('/:tagId', auth, tagValidator.updateTag, tagControl.updateTag)
-// 删除标签
+// 删除标签 done
 router.delete('/:tagId', auth, tagValidator.deleteTag, tagControl.deleteTag)
 module.exports = router

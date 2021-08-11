@@ -24,4 +24,5 @@ module.exports = {
   User: mongoose.model('User', require('./user')),
   Article: mongoose.model('Article', require('./articles')),
   Tag: mongoose.model('Tag', require('./tag')),
+  Comment: mongoose.model('Comment', require('./comment')),
 }
