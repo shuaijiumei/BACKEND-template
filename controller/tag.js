@@ -5,7 +5,7 @@
  * example 例子
  */
 
-const { Article, User, Tag } = require('../model')
+const { Tag } = require('../model')
 
 // 新建标签
 exports.createTag = async (req, res, next) => {

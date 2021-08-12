@@ -37,7 +37,6 @@ exports.login = async (req, res, next) => {
 exports.register = async (req, res, next) => {
   try {
     // 1. 获取请求体数据
-    console.log(req.body)
     // 2. 数据验证
     // 2.1 基本数据验证（符合邮箱格式）
     // 2.2 业务数据验证（不重复）
@@ -82,7 +81,6 @@ exports.updateUser = async (req, res, next) => {
     user.bio = bodyUser.bio || user.bio
     user.image = bodyUser.image || user.image
     user.username = bodyUser.username || user.username
-    user.tagList = bodyUser.tagList || user.tagList
 
     if (bodyUser.email) {
       return res.status(403).end()

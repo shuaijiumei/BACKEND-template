@@ -22,7 +22,7 @@ exports.createTag = [
       // 根据用户id在Tag表中查找
       const tagList = await Tag.find({ author: id })
       if (tagList.some((item) => item.tagName.toString() === req.body.tag.tagName.toString())) {
-        return res.status(401).json({ error: '已经存在同名标签' })
+        return res.status(400).json({ error: '已经存在同名标签' })
       }
       next()
     } catch (e) {
@@ -46,9 +46,9 @@ exports.updateTag = [
     if (tagList.some((item) => item._id.toString() === tagId.toString())) {
       const tag = await Tag.findById(tagId)
       req.tag = tag
-      next()
+      return next()
     }
-    return res.status(401).json({
+    return res.status(404).json({
       error: '标签id错误！请检查',
     })
   },

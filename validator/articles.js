@@ -67,7 +67,7 @@ exports.updateArticle = [
 // 删除文章
 exports.deleteArticle = exports.updateArticle
 // 点赞文章
-exports.favoriteArticle = [
+exports.likeArticle = [
   // id 是否有效
   validate([
     // 自定义验证方法
@@ -89,7 +89,7 @@ exports.addComments = [
 ]
 
 // 获取评论
-exports.getComments = exports.favoriteArticle
+exports.getComments = exports.likeArticle
 // 删除评论
 exports.deleteComments = [
   // id 是否有效
@@ -118,6 +118,44 @@ exports.deleteComments = [
           error: '评论不存在',
         })
       }
+    } catch (e) {
+      next(e)
+    }
+  },
+]
+
+// 收藏文章
+exports.favoriteArticle = [
+  articleExist,
+  // 是否已经收藏文章
+  async (req, res, next) => {
+    try {
+      const { article } = req
+      const { user } = req
+      if (user.favorite.some((item) => item._id.toString() === article._id.toString())) {
+        return res.status(400).json({
+          error: '您已经收藏了该文章',
+        })
+      }
+      next()
+    } catch (e) {
+      next(e)
+    }
+  },
+]
+// 取消收藏
+exports.unFavoriteArticle = [
+  articleExist,
+  async (req, res, next) => {
+    try {
+      const { article } = req
+      const { user } = req
+      if (user.favorite.some((item) => item._id.toString() === article._id.toString())) {
+        return next()
+      }
+      return res.status(400).json({
+        error: '您没有收藏该文章',
+      })
     } catch (e) {
       next(e)
     }

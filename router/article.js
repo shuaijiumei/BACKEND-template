@@ -37,6 +37,10 @@ router.get('/:articleId/comments', articleValidator.getComments, articlesControl
 router.delete('/:articleId/comments/:id', auth, articleValidator.deleteComments, articlesControl.deleteComments)
 
 // 点赞文章 done
-router.post('/:articleId/favorite', articleValidator.favoriteArticle, articlesControl.favoriteArticles)
+router.post('/:articleId/like', articleValidator.likeArticle, articlesControl.likeArticles)
+// 收藏文章 done
+router.post('/:articleId/favorite', auth, articleValidator.favoriteArticle, articlesControl.favoriteArticles)
+// 取消收藏 done
+router.delete('/:articleId/unfavorite', auth, articleValidator.unFavoriteArticle, articlesControl.unFavoriteArticles)
 
 module.exports = router

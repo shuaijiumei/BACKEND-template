@@ -7,6 +7,9 @@
 const {
   Article, User, Tag, Comment,
 } = require('../model')
+
+const { deleteVal } = require('../util/arrDelete')
+
 // 获取文章 + 筛选文章 根据tag、作者、数量
 exports.getArticles = async (req, res, next) => {
   try {
@@ -22,7 +25,7 @@ exports.getArticles = async (req, res, next) => {
       filter.tagList = tag
     }
     if (author) {
-      const user = User.findOne({ username: author })
+      const user = await User.findOne({ username: author })
       filter.author = user ? user._id : null
     }
     // 给 find 方法传递筛选参数
@@ -33,6 +36,13 @@ exports.getArticles = async (req, res, next) => {
         // -1 倒序， 1 正序
         createdAt: -1,
       })
+
+    // 实现级联查询 这里其实是一个异步操作，但是由于下一步的 await所以不需要 await
+    articles.forEach((item) => {
+      item.populate('tagList').execPopulate()
+      item.populate('author').execPopulate()
+    })
+
     // 获取所有的数量
     const articlesCount = await Article.countDocuments()
     res.status(200).json({
@@ -43,25 +53,16 @@ exports.getArticles = async (req, res, next) => {
     next(e)
   }
 }
-// 赞赏文章
-exports.feedArticles = async (req, res, next) => {
-  try {
-    res.send('get /articles/feed')
-  } catch (e) {
-    next(e)
-  }
-}
 // 获取指定文章 query articleId
 exports.getOneArticles = async (req, res, next) => {
   try {
-    const article = await Article.findById(req.params.articleId).populate('author')
+    const article = await Article.findById(req.params.articleId).populate('author').populate('tagList')
     if (!article) {
-      res.status(404).end()
+      return res.status(404).end()
     }
     res.status(200).json({
       article,
     })
-    res.send(`get /articles/:${req.params.slug}`)
   } catch (e) {
     next(e)
   }
@@ -74,11 +75,11 @@ exports.addArticles = async (req, res, next) => {
     // 根据id 映射到 User表 实现级联查询
     await article.populate('author').execPopulate()
     // 给文章打标签 支持多个标签
-    if (req.body.article.tagName.length) {
-      const { tagName } = req.body.article
+    if (req.body.article.tagList?.length) {
+      const { tagList } = req.body.article
       article.tagList = []
       // eslint-disable-next-line no-restricted-syntax
-      for (const item of tagName) {
+      for (const item of tagList) {
         const tag = await Tag.findOne({ tagName: item })
         article.tagList.push(tag)
       }
@@ -103,6 +104,7 @@ exports.updateArticles = async (req, res, next) => {
     article.body = bodyArticle.body || article.body
     article.tagList = bodyArticle.tagList || article.tagList
     await article.save()
+
     res.status(201).json({
       article,
     })
@@ -127,7 +129,6 @@ exports.addComments = async (req, res, next) => {
     comment.author = req.user._id
     await comment.populate('author').execPopulate()
     comment.article = req.article._id
-    await comment.populate('article').execPopulate()
 
     await comment.save()
     res.status(201).json({
@@ -141,7 +142,8 @@ exports.addComments = async (req, res, next) => {
 exports.getComments = async (req, res, next) => {
   try {
     const id = req.article._id
-    const comments = await Comment.find({ article: id })
+    const comments = await Comment.find({ article: id }).populate('author')
+
     res.status(200).json({
       comments,
     })
@@ -149,7 +151,7 @@ exports.getComments = async (req, res, next) => {
     next(e)
   }
 }
-
+// 删除评论
 exports.deleteComments = async (req, res, next) => {
   try {
     const { comment } = req
@@ -160,7 +162,7 @@ exports.deleteComments = async (req, res, next) => {
   }
 }
 // 点赞文章
-exports.favoriteArticles = async (req, res, next) => {
+exports.likeArticles = async (req, res, next) => {
   try {
     const { article } = req
     // 点赞数 + 1 前端做防抖
@@ -170,6 +172,39 @@ exports.favoriteArticles = async (req, res, next) => {
     res.status(201).json({
       article,
     })
+  } catch (e) {
+    next(e)
+  }
+}
+// 收藏文章
+exports.favoriteArticles = async (req, res, next) => {
+  try {
+    const { user } = req
+    const { article } = req
+    user.favorite.push(article._id)
+
+    await user.populate('article').execPopulate()
+
+    await user.save()
+
+    res.status(201).json({
+      msg: '收藏成功！',
+    })
+  } catch (e) {
+    next(e)
+  }
+}
+// 取消收藏文章
+exports.unFavoriteArticles = async (req, res, next) => {
+  try {
+    const { user } = req
+    const { article } = req
+
+    user.favorite = deleteVal(user.favorite, article._id)
+
+    await user.save()
+
+    res.status(204).end()
   } catch (e) {
     next(e)
   }

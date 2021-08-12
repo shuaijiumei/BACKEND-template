@@ -9,6 +9,8 @@ const mongoose = require('mongoose')
 const baseModel = require('./baseModel')
 const mdS = require('../util/mdS')
 
+const { Schema } = mongoose
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -30,6 +32,21 @@ const userSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    default: null,
+  },
+  fans: {
+    type: [Schema.Types.ObjectId],
+    ref: 'User',
+    default: null,
+  },
+  stars: {
+    type: [Schema.Types.ObjectId],
+    ref: 'User',
+    default: null,
+  },
+  favorite: {
+    type: [Schema.Types.ObjectId],
+    ref: 'Article',
     default: null,
   },
   ...baseModel,

@@ -8,14 +8,15 @@
 const express = require('express')
 const profileControl = require('../controller/profile')
 const auth = require('../middleware/auth')
+const profileValidator = require('../validator/profile')
 
 const router = express.Router()
 
-// 获取用户资料
-router.get('/:username', auth, profileControl.getUserInfo)
-// 关注用户
-router.post('/:username/follow', profileControl.followUser)
-// 取消关注用户
-router.delete('/:username/follow', profileControl.unfollowUser)
+// 获取用户资料 done
+router.get('/:username', profileValidator.getUser, profileControl.getUserInfo)
+// 关注用户 done
+router.post('/:username/follow', auth, profileValidator.followUser, profileControl.followUser)
+// 取消关注用户 done
+router.delete('/:username/follow', auth, profileValidator.unFollowUser, profileControl.unfollowUser)
 
 module.exports = router
